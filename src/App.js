@@ -1,6 +1,5 @@
 import React from "react";
-import List from "../src/components/List"
-
+import List from "./components/List"
 
 function App() {
   return (
@@ -24,10 +23,23 @@ function App() {
                 </svg>
               ),
               name: 'Все задачи',
+              active: true,
+            },
+          ]}
+        />
+        <List
+          items={[
+            {
+              color: 'green',
+              name: 'Покупки',
             },
             {
-              color: '#42B883',
-              name: 'Покупки',
+              color: 'blue',
+              name: 'Фронтенд',
+            },
+            {
+              color: 'pink',
+              name: 'Фильмы и сериалы',
             },
           ]}
         />
