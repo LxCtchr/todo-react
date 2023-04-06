@@ -1,38 +1,48 @@
 .list {
   margin-bottom: 30px;
+  &__add-button {
+    svg,
+    span {
+      opacity: 0.4;
+    }
+    &:hover {
+      svg,
+      span {
+        opacity: 1;
+      }
+    }
+    i {
+      position: relative;
+      left: 5px;
+    }
+    span {
+      margin-left: 8px;
+    }
+  }
   li {
     display: flex;
     align-items: center;
-    padding: 10px 10px;
     cursor: pointer;
+    padding: 10px 12px;
     &.active {
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
       border-radius: 4px;
       background: #ffffff;
     }
+    span {
+      width: 160px;
+    }
+    .icon {
+      position: relative;
+      left: 5px;
+    }
     i {
       display: inline-flex;
       margin-right: 8px;
       svg {
-        & path {
-          fill: grey;
+        path {
+          fill: #7c7c7c;
         }
-      }
-    }
-    .icon {
-      width: 10px;
-      height: 10px;
-      border-radius: 30px;
-      position: relative;
-      left: 5px;
-      &--green {
-        background: #42b883;
-      }
-      &--blue {
-        background: #64C4ED;
-      }
-      &--pink {
-        background: #ffbbcc;
       }
     }
   }
