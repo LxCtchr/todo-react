@@ -8,6 +8,7 @@ body {
 }
 
 .todo {
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,6 +25,10 @@ body {
     height: calc(100% - 120px);
     border-right: 1px solid #f1f1f1;
     padding: 60px 15px;
+  }
+  &__tasks {
+    flex: 1;
+    padding: 55px;
   }
 }
 

@@ -1,4 +1,5 @@
 .list {
+  $self: &;
   margin-bottom: 30px;
   &__add-button {
     svg,
@@ -24,6 +25,23 @@
     align-items: center;
     cursor: pointer;
     padding: 10px 12px;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease-in-out;
+    &:hover #{$self}__remove-icon {
+      opacity: 0.3;
+    }
+    #{$self}__remove-icon {
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &:hover {
+      // background-color: rgba(255, 255, 255, 0.5);
+      background-color: red;
+      border: 1px solid black;
+    }
     &.active {
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
       border-radius: 4px;
@@ -31,6 +49,7 @@
     }
     span {
       width: 160px;
+      flex: 1;
     }
     .icon {
       position: relative;
