@@ -12,8 +12,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 750px;
-  height: 530px;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 100px);
   transform: translate(-50%, -50%);
   box-shadow: 1px 10px 20px #f3f3f3;
   border-radius: 10px;
@@ -21,7 +21,7 @@ body {
   background-color: #ffffff;
   &__sidebar {
     background-color: #f4f6f8;
-    width: 200px;
+    width: 15%;
     height: calc(100% - 120px);
     border-right: 1px solid #f1f1f1;
     padding: 60px 15px;
@@ -29,6 +29,7 @@ body {
   &__tasks {
     flex: 1;
     padding: 55px;
+    overflow: auto;
   }
 }
 
