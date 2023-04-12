@@ -20,6 +20,7 @@ body {
   border: 1px solid #f1f1f1;
   background-color: #ffffff;
   &__sidebar {
+    z-index: 1;
     background-color: #f4f6f8;
     width: 15%;
     height: calc(100% - 120px);
@@ -27,6 +28,7 @@ body {
     padding: 60px 15px;
   }
   &__tasks {
+    z-index: 0;
     flex: 1;
     padding: 55px;
     overflow: auto;

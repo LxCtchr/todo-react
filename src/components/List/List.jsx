@@ -20,7 +20,6 @@ function List({
     });
   };
 
-  console.log(items);
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (

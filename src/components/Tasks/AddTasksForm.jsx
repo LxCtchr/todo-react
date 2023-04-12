@@ -20,18 +20,20 @@ function AddTasksForm({ list, onAddTask }) {
       completed: false,
     };
     setIsLoading(true);
-    axios
-      .post("http://localhost:3001/tasks", obj)
-      .then(({ data }) => {
-        onAddTask(list.id, data);
-        toggleFormVisible();
-      })
-      .catch((event) => {
-        alert("Ошибка при добавлении задачи!");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    if (inputValue !== "") {
+      axios
+        .post("http://localhost:3001/tasks", obj)
+        .then(({ data }) => {
+          onAddTask(list.id, data);
+          toggleFormVisible();
+        })
+        .catch((event) => {
+          alert("Ошибка при добавлении задачи!");
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else return;
   };
 
   return (

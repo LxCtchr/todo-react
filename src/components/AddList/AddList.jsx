@@ -19,22 +19,24 @@ function AddList({ colors, onAdd }) {
     setInputValue("");
   };
   const addList = () => {
-    setIsLoading(true);
-    axios
-      .post("http://localhost:3001/lists", {
-        name: inputValue,
-        colorId: selectedColor,
-      })
-      .then(({ data }) => {
-        const color = colors.filter((color) => color.id === selectedColor)[0]
-          .name;
-        const listObj = { ...data, color: { name: color } };
-        onAdd(listObj);
-        onClose();
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    if (inputValue !== "") {
+      setIsLoading(true);
+      axios
+        .post("http://localhost:3001/lists", {
+          name: inputValue,
+          colorId: selectedColor,
+        })
+        .then(({ data }) => {
+          const color = colors.filter((color) => color.id === selectedColor)[0];
+          const listObj = { ...data, color, tasks: [] };
+          console.log(data);
+          onAdd(listObj);
+          onClose();
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else return;
   };
 
   useEffect(() => {

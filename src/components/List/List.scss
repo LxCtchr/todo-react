@@ -1,4 +1,6 @@
 .list {
+  overflow: auto;
+  max-height: 80%;
   $self: &;
   margin-bottom: 30px;
   &__add-button {
