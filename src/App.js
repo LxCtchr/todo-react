@@ -6,6 +6,7 @@ import axios from "axios";
 function App() {
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
     axios
@@ -20,6 +21,26 @@ function App() {
 
   const onAddList = (obj) => {
     const newList = [...lists, obj];
+    setLists(newList);
+  };
+
+  const onAddTask = (listId, taskObj) => {
+    const newTask = lists.map((item) => {
+      if (item.id === listId) {
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newTask);
+  };
+
+  const onEditListTitle = (id, title) => {
+    const newList = lists.map((item) => {
+      if (item.id === id) {
+        item.name = title;
+      }
+      return item;
+    });
     setLists(newList);
   };
   return (
@@ -54,14 +75,26 @@ function App() {
               const newLists = lists.filter((item) => item.id !== id);
               setLists(newLists);
             }}
+            onClickItem={(item) => {
+              setActiveItem(item);
+            }}
             isRemovable
+            activeItem={activeItem}
           />
         ) : (
           "Загрузка..."
         )}
         <AddList onAdd={onAddList} colors={colors} />
       </div>
-      <div className="todo__tasks">{lists && <Tasks list={lists[1]} />}</div>
+      <div className="todo__tasks">
+        {lists && activeItem && (
+          <Tasks
+            list={activeItem}
+            onEditTitle={onEditListTitle}
+            onAddTask={onAddTask}
+          />
+        )}
+      </div>
     </div>
   );
 }
