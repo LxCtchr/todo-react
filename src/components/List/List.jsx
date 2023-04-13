@@ -19,7 +19,6 @@ function List({
       onRemove(item.id);
     });
   };
-
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (

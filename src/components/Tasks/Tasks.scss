@@ -1,4 +1,6 @@
 .tasks {
+  overflow-wrap: break-word;
+  width: 95%;
   &:not(:last-of-type) {
     margin-bottom: 30px;
   }
@@ -9,7 +11,7 @@
     line-height: 39px;
     color: #64c4ed;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgb(100, 100, 139);
+    border-bottom: 1px solid #954629;
     margin-bottom: 15px;
     &:hover {
       img {
@@ -42,11 +44,16 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      input {
+      p {
         margin-left: 15px;
         border: 0;
         font-size: 16px;
-        width: 100%;
+        max-width: 95%;
+        background-color: #222224;
+        color: white;
+        overflow-wrap: break-word;
+        flex: 1;
+        //white-space: wrap;
       }
       &:hover &-actions {
         opacity: 1;
@@ -56,7 +63,6 @@
         display: flex;
         opacity: 0;
         transition: opacity 0.15s ease-in-out;
-
         div {
           display: flex;
           align-items: center;
@@ -98,6 +104,8 @@
       }
       span {
         font-size: 16px;
+        color: white;
+        margin-top: 2px;
       }
       img {
         margin-right: 18px;

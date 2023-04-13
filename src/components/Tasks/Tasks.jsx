@@ -30,7 +30,6 @@ function Tasks({
         });
     }
   };
-
   return (
     <div className="tasks">
       <NavLink to={`/lists/${list.id}`}>

@@ -31,7 +31,7 @@ function TaskForm({ id, text, completed, list, onRemove, onEdit, onComplete }) {
           </svg>
         </label>
       </div>
-      <input readOnly value={text} />
+      <p>{text}</p>
       <div className="tasks__items-row-actions">
         <div onClick={() => onEdit(list.id, { id, text })}>
           <svg

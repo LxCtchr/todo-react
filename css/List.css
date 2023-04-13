@@ -1,0 +1,66 @@
+.list {
+  overflow: auto;
+  overflow-wrap: break-word;
+  white-space: wrap;
+  max-width: 100%;
+  max-height: 80%;
+  margin-bottom: 30px;
+}
+.list__add-button svg,
+.list__add-button span {
+  opacity: 0.4;
+}
+.list__add-button:hover svg,
+.list__add-button:hover span {
+  opacity: 1;
+}
+.list__add-button i {
+  position: relative;
+  left: 5px;
+}
+.list__add-button span {
+  margin-left: 8px;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease-in-out;
+  border-radius: 4px;
+}
+.list li:hover .list__remove-icon {
+  opacity: 0.3;
+}
+.list li .list__remove-icon {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.list li .list__remove-icon:hover {
+  opacity: 0.8;
+}
+.list li:hover {
+  background: #e67147;
+  border-radius: 4px;
+}
+.list li.active {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  background: #cb3d0a;
+}
+.list li span {
+  display: inline-block;
+  flex: 1;
+  width: 70%;
+  color: white;
+  overflow-wrap: break-word;
+}
+.list li .icon {
+  position: relative;
+  left: 5px;
+}
+.list li i {
+  display: inline-flex;
+  margin-right: 8px;
+}
